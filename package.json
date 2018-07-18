@@ -1,0 +1,23 @@
+{
+  "name": "graphs",
+  "version": "1.0.0",
+  "description": "graphs with nodejs and canvasjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vijayvulchi@github.com/vijayvulchi/graphs.git"
+  },
+  "keywords": [
+    "graphs",
+    "canvasjs"
+  ],
+  "author": "vulchi vijaya kumar @vulchi.vijay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vijayvulchi/graphs/issues"
+  },
+  "homepage": "https://github.com/vijayvulchi/graphs#readme"
+}
