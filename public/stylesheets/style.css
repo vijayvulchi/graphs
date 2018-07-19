@@ -3,7 +3,7 @@
   --theme-dark: #22313a;
   --theme-hard-dark: #1e2a31;
   --theme-light: #8a9ba1;
-  --aside-width: 75px;
+  --aside-width: 60px;
 }
 
 html {
@@ -35,7 +35,7 @@ body {
 
 .vj-content {
   position: relative;
-  padding: 15px;
+  padding: 75px 15px 15px;
 }
 
 .widget {
@@ -43,12 +43,30 @@ body {
   border-radius: 3px;
 }
 
+/* cards */
 .card {
+  padding: 15px;
   background-color: var(--theme-hard-dark);
   box-shadow: 0 0 4px 0 rgba(0,0,0,.04);
 }
 
+.card-200 {
+  height: 200px;
+}
+
+.card-250 {
+  height: 250px;
+}
+
+.card-455 {
+  height: 455px;
+}
+
 @media (min-width: 768px) {
+  .vj-content {
+    padding: 15px;
+  }
+
   .vj-left-aside {
     position: fixed;
     top: 60px;
@@ -56,8 +74,19 @@ body {
     display: block;
     width: var(--aside-width);
     height: 100%;
-    padding: 15px;
+    padding: 10px;
   }
+
+  .vj-left-aside a {
+    width: 40px;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px 0 12px;
+    line-height: 1;
+    text-align: center;
+    background-color: var(--theme-hard-dark);
+  }
+
   .vj-content {
     top: 60px;
     left: var(--aside-width);
