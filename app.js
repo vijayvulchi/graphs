@@ -22,6 +22,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// using third party frameworks/plugins
+app.use('/bootstrapjs', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/boostrapcss', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free/js/'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

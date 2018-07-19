@@ -1,8 +1,67 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+:root {
+  --theme-dark: #22313a;
+  --theme-hard-dark: #1e2a31;
+  --theme-light: #8a9ba1;
+  --aside-width: 75px;
+}
+
+html {
+  height: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: var(--white);
+}
+
+body {
+  min-height: 100%;
+  font-size: 16px;
+  background-color: var(--theme-dark);
+  color: var(--theme-light);
+}
+
+.vj-bg-dark {
+  background-color: var(--theme-hard-dark);
+  color: var(--theme-light);
+}
+.vj-wrapper {
+  min-height: 100%;
+}
+
+.vj-left-aside {
+  display: none;
+}
+
+.vj-content {
+  position: relative;
+  padding: 15px;
+}
+
+.widget {
+  margin-bottom: 25px;
+  border-radius: 3px;
+}
+
+.card {
+  background-color: var(--theme-hard-dark);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.04);
+}
+
+@media (min-width: 768px) {
+  .vj-left-aside {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    display: block;
+    width: var(--aside-width);
+    height: 100%;
+    padding: 15px;
+  }
+  .vj-content {
+    top: 60px;
+    left: var(--aside-width);
+    width: calc(100% - var(--aside-width));
+    min-height: 100%;
+  }
 }

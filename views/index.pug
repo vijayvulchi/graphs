@@ -1,5 +1,78 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.vj-bg-dark
+      a(class="navbar-brand" href="/") Logo
+      button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarSupportedContent
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='#') Website overview
+          li.nav-item
+            a.nav-link(href='#') Content overview
+          li.nav-item
+            a.nav-link(href='#') Twitter activity
+          li.nav-item
+            a.nav-link(href='#') Misc
+          li.nav-item
+            a.nav-link(href='#') All sites
+  .vj-wrapper
+    .vj-left-aside
+      nav.vj-navbar-aside
+        a.nav-link(href='#')
+          i.fas.fa-edit
+        a.nav-link(href='#')
+          i.fas.fa-external-link-alt
+        a.nav-link(href='#')
+          i.fas.fa-share-alt-square
+        a.nav-link(href='#')
+          i.fas.fa-expand-arrows-alt
+    .vj-content
+      .row
+        .col-sm-6
+          .row
+            .col-sm-12
+              div.widget.card
+                p column
+            .col-sm-12
+              .row
+                .col-sm-6
+                  div.widget.card
+                    p column
+                .col-sm-6
+                  div.widget.card
+                    p column
+              .row
+                .col-sm-6
+                  div.widget.card
+                    p column
+                .col-sm-6
+                  div.widget.card
+                    p column
+        .col-sm-6
+          .row
+            .col-sm-12
+              div.widget.card
+                p column
+            .col-sm-12
+              .row
+                .col-sm-6
+                  div.widget.card
+                    p column
+                .col-sm-6
+                  div.widget.card
+                    p column
+              .row
+                .col-sm-6
+                  div.widget.card
+                    p column
+                .col-sm-6
+                  div.widget.card
+                    p column
+
+  script(src='/jquery/jquery.min.js')
+  script(src='/bootstrapjs/bootstrap.min.js')
+  script(src='/fontawesome/all.min.js')
+  script(src='/javascripts/vendar/jquery.canvasjs.min.js')
