@@ -3,7 +3,19 @@ const $ = jQuery;
 $(function () {
   // variables
   canvasBg = '#1e2a31';
-	// chart styles
+  axisX = {
+    lineThickness: 0,
+    tickThickness: 0,
+    valueFormatString: ' '
+  }
+  axisY = {
+    includeZero: false,
+    lineThickness: 0,
+    tickThickness: 0,
+    valueFormatString: ' ',
+    gridThickness: 0
+  }
+	// chart data
 	var sessionsLastMonth = new CanvasJS.Chart('sessions_last_month', {
 		animationEnabled: true,
 		exportEnabled: true,
@@ -23,18 +35,8 @@ $(function () {
 				verticalAlign: 'bottom'
 			}
 		],
-		axisX: {
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' '
-		},
-		axisY: {
-			includeZero: false,
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' ',
-			gridThickness: 0
-		},
+		axisX: axisX,
+		axisY: axisY,
 		data: [
       {
         type: 'spline',
@@ -78,18 +80,8 @@ $(function () {
 				verticalAlign: 'bottom'
 			}
 		],
-		axisX: {
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' '
-		},
-		axisY: {
-			includeZero: false,
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' ',
-			gridThickness: 0
-		},
+		axisX: axisX,
+		axisY: axisY,
 		data: [{        
 			type: 'line',
 			lineThickness: 2,
@@ -156,18 +148,8 @@ $(function () {
 				verticalAlign: 'bottom'
 			}
 		],
-		axisX: {
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' '
-		},
-		axisY: {
-			includeZero: false,
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' ',
-			gridThickness: 0
-		},
+		axisX: axisX,
+		axisY: axisY,
 		data: [
       {
         type: 'spline',
@@ -211,18 +193,8 @@ $(function () {
 				verticalAlign: 'bottom'
 			}
 		],
-		axisX: {
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' '
-		},
-		axisY: {
-			includeZero: false,
-			lineThickness: 0,
-			tickThickness: 0,
-			valueFormatString: ' ',
-			gridThickness: 0
-		},
+		axisX: axisX,
+		axisY: axisY,
 		data: [
       {
         type: 'line',
