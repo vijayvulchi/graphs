@@ -2,7 +2,9 @@
 const $ = jQuery;
 $(function () {
   // variables
-  canvasBg = '#1e2a31';
+  // canvasBg = '#1e2a31';
+  canvasBg = '#282828';
+  borderColor = '#0C785B';
   axisX = {
     lineThickness: 0,
     tickThickness: 0,

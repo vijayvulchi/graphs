@@ -1,0 +1,9 @@
+/* canvasjs overwrite styles */
+.canvasjs-chart-toolbar button {
+  background-color: var(--theme-hard-dark) !important;
+}
+
+.canvasjs-chart-toolbar > div {
+  z-index: 1000;
+  border-radius: 3px;
+}

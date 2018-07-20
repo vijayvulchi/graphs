@@ -36,6 +36,12 @@ block content
             .col-sm-12
               div.widget.card
                 div.card-250#sessions_last_month
+                .card__chart-details
+                  h5 18,015
+                  h5 SESSIONS
+                  h5
+                    i.fas.fa-caret-down
+                    span 25.00%
             .col-sm-12
               .row
                 .col-sm-6
@@ -51,8 +57,8 @@ block content
                   div.widget.card.card-200
                     p column
                 .col-sm-6
-                  div.widget.card.card-455
-                    p column
+                  div.widget.card
+                    .card-455#jvmap_world
         .col-sm-6
           .row
             .col-sm-12
@@ -78,4 +84,7 @@ block content
   script(src='/bootstrapjs/bootstrap.min.js')
   script(src='/fontawesome/all.min.js')
   script(src='/javascripts/vendar/jquery.canvasjs.min.js')
+  script(src='/javascripts/vendar/jquery.vmap.min.js')
+  script(src='/javascripts/vendar/jquery.vmap.world.js')
   script(src='/javascripts/canvas-graphs.js')
+  script(src='/javascripts/jvmap-graphs.js')
