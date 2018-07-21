@@ -135,15 +135,15 @@ body {
   color: var(--theme-green);
 }
 
-.card-200 {
-  height: 150px;
+.card-small {
+  height: 160px;
 }
 
-.card-250 {
+.card-medium {
   height: 200px;
 }
 
-.card-455 {
+.card-large {
   height: 405px;
 }
 

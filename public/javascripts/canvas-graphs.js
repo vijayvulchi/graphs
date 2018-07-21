@@ -2,286 +2,181 @@
 const $ = jQuery;
 $(function () {
   // variables
-  // canvasBg = '#1e2a31';
-  canvasBg = '#282828';
-  borderColor = '#0C785B';
-  axisX = {
+  let canvasBg = '#282828';
+  let lineColor = '#0C785B';
+  let lineTickness = 2;
+  let fontFamily = 'tahoma';
+  let fontColor = '#797974';
+  let fontSize = 16;
+  let axisX = {
     lineThickness: 0,
     tickThickness: 0,
     valueFormatString: ' '
-  }
-  axisY = {
+  };
+  let axisY = {
     includeZero: false,
     lineThickness: 0,
     tickThickness: 0,
     valueFormatString: ' ',
     gridThickness: 0
-  }
-	// chart data
-	var sessionsLastMonth = new CanvasJS.Chart('sessions_last_month', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title: {
-			text: 'SESSIONS: LAST MONTH',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles:[
-			{
-				text: 'last month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		axisX: axisX,
-		axisY: axisY,
-		data: [
-      {
-        type: 'spline',
-        lineThickness: 2,
-        markerType: 'none',
-        lineColor: '#0C785B',
-        dataPoints: [
-          { y: 450 },
-          { y: 414 },
-          { y: 520 },
-          { y: 460 },
-          { y: 450 },
-          { y: 500 },
-          { y: 480 },
-          { y: 480 },
-          { y: 410 },
-          { y: 500 },
-          { y: 480 },
-          { y: 510 }
-        ]
+  };
+
+  let canvasData = [
+    {
+      'sessionsLastMonth': {
+        'lineGraph': true,
+        'id': 'sessions_last_month',
+        'url': 'javascripts/json/sessionslastmonth.json',
+        'title': 'SESSIONS: LAST MONTH',
+        'subTitle': 'last month',
+        'axisX': true,
+        'axisY': true,
+        'dataType': 'spline'
       }
-    ]
-	});
-
-	var sessionsThisMonth = new CanvasJS.Chart('sessions_this_month', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'SESSIONS: THIS MONTH',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles:[
-			{
-				text: 'this month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		axisX: axisX,
-		axisY: axisY,
-		data: [{        
-			type: 'line',
-			lineThickness: 2,
-			markerType: 'none',
-			lineColor: '#0C785B',
-			dataPoints: [
-				{ y: 450 },
-				{ y: 414 },
-				{ y: 520 },
-				{ y: 460 },
-				{ y: 450 },
-				{ y: 500 }
-			]
-		}]
-	});
-
-	var usersType = new CanvasJS.Chart('users_type', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'USER TYPE',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles:[
-			{
-				text: 'this month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		data: [
-      {
-        type: 'pie',
-        startAngle: 270,
-        dataPoints: [
-          { y: 70.9, color: '#0C785B' },
-          { y: 29.1, color: '#00A564', exploded: true }
-        ]
+    },
+    {
+      'sessionsThisMonth': {
+        'lineGraph': true,
+        'id': 'sessions_this_month',
+        'url': 'javascripts/json/sessionsthismonth.json',
+        'title': 'SESSIONS: THIS MONTH',
+        'subTitle': 'this month',
+        'axisX': true,
+        'axisY': true,
+        'dataType': 'line'
       }
-    ]
-	});
-
-	var usersLastMonth = new CanvasJS.Chart('users_last_month', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'USERS: LAST MONTH',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles:[
-			{
-				text: 'last month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		axisX: axisX,
-		axisY: axisY,
-		data: [
-      {
-        type: 'spline',
-        lineThickness: 3,
-        markerType: 'none',
-        lineColor: '#0C785B',
-        dataPoints: [
-          { y: 450 },
-          { y: 414 },
-          { y: 520 },
-          { y: 460 },
-          { y: 450 },
-          { y: 500 },
-          { y: 480 },
-          { y: 480 },
-          { y: 410 },
-          { y: 500 },
-          { y: 480 },
-          { y: 510 }
-        ]
+    },
+    {
+      'usersLastMonth': {
+        'lineGraph': true,
+        'id': 'users_last_month',
+        'url': 'javascripts/json/userslastmonth.json',
+        'title': 'USERS: LAST MONTH',
+        'subTitle': 'last month',
+        'axisX': true,
+        'axisY': true,
+        'dataType': 'spline'
       }
-    ]
-	});
-
-	var usersThisMonth = new CanvasJS.Chart('users_this_month', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'USERS: THIS MONTH',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles:[
-			{
-				text: 'this month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		axisX: axisX,
-		axisY: axisY,
-		data: [
-      {
-        type: 'line',
-        lineThickness: 3,
-        markerType: 'none',
-        lineColor: '#0C785B',
-        dataPoints: [
-          { y: 450 },
-          { y: 414 },
-          { y: 520 },
-          { y: 460 },
-          { y: 450 },
-          { y: 500 }
-        ]
+    },
+    {
+      'usersThisMonth': {
+        'lineGraph': true,
+        'id': 'users_this_month',
+        'url': 'javascripts/json/usersthismonth.json',
+        'title': 'USERS: THIS MONTH',
+        'subTitle': 'this month',
+        'axisX': true,
+        'axisY': true,
+        'dataType': 'line'
       }
-    ]
-	});
-
-	var socialReferral = new CanvasJS.Chart('social_referral', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'SOCIAL REFERRAL',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles: [
-			{
-				text: 'this month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		data: [
-      {
-			type: 'doughnut',
-			startAngle: 270,
-        dataPoints: [
-          { y: 93.6, color: '#0C785B' },
-          { y: 6.4, color: '#00A564', exploded: true }
-        ]
+    },
+    {
+      'usersType': {
+        'pieGraph': true,
+        'id': 'users_type',
+        'url': 'javascripts/json/userstype.json',
+        'title': 'USER TYPE',
+        'subTitle': 'this month',
+        'dataType': 'pie',
+        'startAngle': 270
       }
-    ]
-	});
-
-	var bounceRate = new CanvasJS.Chart('bounce_rate', {
-		animationEnabled: true,
-		exportEnabled: true,
-		backgroundColor: canvasBg,
-		title:{
-			text: 'BOUNCE RATE',
-			fontFamily: 'tahoma',
-			fontColor: '#797974',
-			fontSize: 16
-		},
-		subtitles: [
-			{
-				text: 'this month',
-				fontFamily: "tahoma",
-				fontColor: '#797974',
-				horizontalAlign: 'left',
-				verticalAlign: 'bottom'
-			}
-		],
-		data: [
-      {
-			type: 'doughnut',
-			startAngle: 250,
-        dataPoints: [
-          { y: 78.3, color: '#0C785B' },
-          { y: 21.7, color: '#343536', exploded: true }
-        ]
+    },
+    {
+      'socialReferral': {
+        'pieGraph': true,
+        'id': 'social_referral',
+        'url': 'javascripts/json/socialreferral.json',
+        'title': 'SOCIAL REFERRAL',
+        'subTitle': 'this month',
+        'dataType': 'doughnut',
+        'startAngle': 270
       }
-    ]
-	});
+    },
+    {
+      'bounceRate': {
+        'pieGraph': true,
+        'id': 'bounce_rate',
+        'url': 'javascripts/json/bouncerate.json',
+        'title': 'BOUNCE RATE',
+        'subTitle': 'this month',
+        'dataType': 'doughnut',
+        'startAngle': 250
+      }
+    }
+  ];
 
-	sessionsLastMonth.render();
-	sessionsThisMonth.render();
-	usersType.render();
-	usersLastMonth.render();
-	usersThisMonth.render();
-	socialReferral.render();
-	bounceRate.render();
+  $.each(canvasData, function (index, object) {
+    $.each(object, function (key, value) {
+      if (value.lineGraph === true) {
+        $.get(value.url, function (data) {
+          let dataPoints = data;
+          let chart = new CanvasJS.Chart(value.id, {
+            animationEnabled: true,
+            exportEnabled: true,
+            backgroundColor: canvasBg,
+            title: {
+              text: value.title,
+              fontFamily: fontFamily,
+              fontColor: fontColor,
+              fontSize: fontSize
+            },
+            subtitles: [
+              {
+                text: value.subTitle,
+                fontFamily: fontFamily,
+                fontColor: fontColor,
+                horizontalAlign: 'left',
+                verticalAlign: 'bottom'
+              }
+            ],
+            axisX: axisX,
+            axisY: axisY,
+            data: [
+              {
+                type: value.dataType,
+                lineThickness: lineTickness,
+                markerType: 'none',
+                lineColor: lineColor,
+                dataPoints: dataPoints
+              }
+            ]
+          });
+          chart.render();
+        });
+      }
+      if (value.pieGraph === true) {
+        $.get(value.url, function (data) {
+          let dataPoints = data;
+          let chart = new CanvasJS.Chart(value.id, {
+            animationEnabled: true,
+            exportEnabled: true,
+            backgroundColor: canvasBg,
+            title: {
+              text: value.title,
+              fontFamily: fontFamily,
+              fontColor: fontColor,
+              fontSize: fontSize
+            },
+            subtitles: [
+              {
+                text: value.subTitle,
+                fontFamily: fontFamily,
+                fontColor: fontColor,
+                horizontalAlign: 'left',
+                verticalAlign: 'bottom'
+              }
+            ],
+            data: [
+              {
+                type: value.dataType,
+                startAngle: value.startAngle,
+                dataPoints: dataPoints
+              }
+            ]
+          });
+          chart.render();
+        });
+      }
+    });
+  });
 });
