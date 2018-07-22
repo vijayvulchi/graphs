@@ -1,0 +1,14 @@
+/* overwriting jvmap styles */
+
+.jvmap-world .jqvmap-zoomin,
+.jvmap-world .jqvmap-zoomout {
+  width: 20px;
+  height: 20px;
+  padding: 6px 3px;
+  background-color: var(--theme-green);
+  color: var(--theme-background);
+}
+
+.jvmap-world .jqvmap-zoomout {
+  top: 40px;
+}

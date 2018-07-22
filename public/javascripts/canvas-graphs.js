@@ -1,14 +1,14 @@
 // Canvas
 const $ = jQuery;
 $(function () {
-  // variables
-  let canvasBg = '#282828';
+  // global variables
+  let canvasBackground = '';
+  let fontColor = '';
+  let legendTextColor = '';
   let lineColor = '#0C785B';
-  let colorWhite = '#ffffff';
-  let lineTickness = 2;
   let fontFamily = 'sans-serif';
   let legendFontFamily = 'sans-serif';
-  let fontColor = '#797974';
+  let lineTickness = 2;
   let fontSize = 16;
   let axisX = {
     lineThickness: 0,
@@ -22,6 +22,18 @@ $(function () {
     valueFormatString: ' ',
     gridThickness: 0
   };
+
+  if($('html').hasClass('dark')) {
+    canvasBackground = '#282828';
+    legendTextColor = '#ffffff';
+    fontColor = '#797974';
+  }
+  if($('html').hasClass('light')) {
+    canvasBackground = '#ffffff';
+    legendTextColor = '#000000';
+    fontColor = '#000000';
+  }
+
   let canvasData = [
     {
       'sessionsLastMonth': {
@@ -132,7 +144,7 @@ $(function () {
           let chart = new CanvasJS.Chart(value.id, {
             animationEnabled: true,
             exportEnabled: true,
-            backgroundColor: canvasBg,
+            backgroundColor: canvasBackground,
             title: {
               text: value.title,
               fontFamily: fontFamily,
@@ -153,7 +165,7 @@ $(function () {
             legend: {
               fontFamily: legendFontFamily,
               fontSize: value.legendFontSize,
-              fontColor: colorWhite,
+              fontColor: legendTextColor,
               markerMargin: 8,
               itemWidth: value.legendWidth,
               itemWrap: true,
@@ -182,7 +194,7 @@ $(function () {
           let chart = new CanvasJS.Chart(value.id, {
             animationEnabled: true,
             exportEnabled: true,
-            backgroundColor: canvasBg,
+            backgroundColor: canvasBackground,
             title: {
               text: value.title,
               fontFamily: fontFamily,
@@ -201,7 +213,7 @@ $(function () {
             legend: {
               fontSize: value.legendFontSize,
               fontFamily: legendFontFamily,
-              fontColor: colorWhite,
+              fontColor: legendTextColor,
               markerMargin: 4,
               itemWidth: value.legendWidth,
               itemWrap: true,
@@ -212,8 +224,8 @@ $(function () {
               {
                 type: value.dataType,
                 showInLegend: true,
-                indexLabelLineColor: canvasBg,
-                indexLabelFontColor: canvasBg,
+                indexLabelLineColor: canvasBackground,
+                indexLabelFontColor: canvasBackground,
                 indexLabelLineThickness: 0,
                 legendText: '{indexLabel}',
                 startAngle: value.startAngle,
