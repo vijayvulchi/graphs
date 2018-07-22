@@ -12,3 +12,7 @@ To run this application in localmachine, please follow below steps
 3. run: npm install
 4. DEBUG=graphs:* npm start
 5. Click or enter the url in browser http://localhost:3000/
+
+<img src="https://github.com/vijayvulchi/graphs/blob/master/public/images/dark-theme.png" alt="dashboard-dark"/>
+
+<img src="https://github.com/vijayvulchi/graphs/blob/master/public/images/light-theme.png" alt="dashboard-light"/>
