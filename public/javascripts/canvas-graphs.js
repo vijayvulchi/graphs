@@ -243,17 +243,16 @@ $(function () {
     });
   }
 
+  // default function calls
   generateTheme();
   generateCanvas();
 
   $('#theme_switch input[type="radio"]').on('change', function () {
     if ($(this).attr('id') === 'theme_dark') {
-      // $('html').removeClass('theme-light').addClass('theme-dark');
       generateTheme();
       generateCanvas();
     }
     if ($(this).attr('id') === 'theme_light') {
-      // $('html').removeClass('theme-dark').addClass('theme-light');
       generateTheme();
       generateCanvas();
     }
