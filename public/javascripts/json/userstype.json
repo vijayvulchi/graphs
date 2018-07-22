@@ -1,11 +1,17 @@
 [
   {
     "y": 70.9,
-    "color": "#0C785B"
+    "color": "#0C785B",
+    "indexLabel": "70.9% NEW USER",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#282828"
   },
   {
     "y": 29.1,
     "color": "#00A564",
-    "exploded": true
+    "exploded": true,
+    "indexLabel": "29.1% RETURNING U..",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#282828"
   }
 ]

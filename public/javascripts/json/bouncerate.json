@@ -1,11 +1,17 @@
 [
   {
-    "y": 78.3,
-    "color": "#0C785B"
+    "y": 78.53,
+    "color": "#0C785B",
+    "indexLabel": "78.53% Bounce Rate",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#282828"
   },
   {
-    "y": 21.7,
+    "y": 21.47,
     "color": "#343536",
-    "exploded": true
+    "exploded": true,
+    "indexLabel": "0.57%",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#ffffff"
   }
 ]

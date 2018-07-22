@@ -144,12 +144,16 @@ body {
 }
 
 .card-large {
-  height: 405px;
+  height: 379px;
+}
+
+.jvmap-world {
+  height: 320px;
 }
 
 @media (min-width: 768px) {
   .vj-content {
-    padding: 15px;
+    padding: 25px 15px;
   }
 
   .vj-left-aside {

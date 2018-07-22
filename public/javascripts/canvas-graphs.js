@@ -4,8 +4,10 @@ $(function () {
   // variables
   let canvasBg = '#282828';
   let lineColor = '#0C785B';
+  let colorWhite = '#ffffff';
   let lineTickness = 2;
-  let fontFamily = 'tahoma';
+  let fontFamily = 'sans-serif';
+  let legendFontFamily = 'sans-serif';
   let fontColor = '#797974';
   let fontSize = 16;
   let axisX = {
@@ -20,7 +22,6 @@ $(function () {
     valueFormatString: ' ',
     gridThickness: 0
   };
-
   let canvasData = [
     {
       'sessionsLastMonth': {
@@ -31,7 +32,10 @@ $(function () {
         'subTitle': 'last month',
         'axisX': true,
         'axisY': true,
-        'dataType': 'spline'
+        'dataType': 'spline',
+        'legendWidth': 120,
+        'legendFontSize': 15,
+        'legendText': '84,015 SESSIONS 25.00%'
       }
     },
     {
@@ -43,7 +47,10 @@ $(function () {
         'subTitle': 'this month',
         'axisX': true,
         'axisY': true,
-        'dataType': 'line'
+        'dataType': 'line',
+        'legendWidth': 120,
+        'legendFontSize': 15,
+        'legendText': '11,461 SESSIONS 3.00%'
       }
     },
     {
@@ -55,7 +62,10 @@ $(function () {
         'subTitle': 'last month',
         'axisX': true,
         'axisY': true,
-        'dataType': 'spline'
+        'dataType': 'spline',
+        'legendWidth': 100,
+        'legendFontSize': 14,
+        'legendText': '74,340 USERS 26.00%'
       }
     },
     {
@@ -67,7 +77,10 @@ $(function () {
         'subTitle': 'this month',
         'axisX': true,
         'axisY': true,
-        'dataType': 'line'
+        'dataType': 'line',
+        'legendWidth': 100,
+        'legendFontSize': 14,
+        'legendText': '10,108 USERS 4.00%'
       }
     },
     {
@@ -78,6 +91,8 @@ $(function () {
         'title': 'USER TYPE',
         'subTitle': 'this month',
         'dataType': 'pie',
+        'legendWidth': 135,
+        'legendFontSize': 11,
         'startAngle': 270
       }
     },
@@ -89,6 +104,8 @@ $(function () {
         'title': 'SOCIAL REFERRAL',
         'subTitle': 'this month',
         'dataType': 'doughnut',
+        'legendWidth': 130,
+        'legendFontSize': 11,
         'startAngle': 270
       }
     },
@@ -100,6 +117,8 @@ $(function () {
         'title': 'BOUNCE RATE',
         'subTitle': 'this month',
         'dataType': 'doughnut',
+        'legendWidth': 110,
+        'legendFontSize': 14,
         'startAngle': 250
       }
     }
@@ -131,9 +150,22 @@ $(function () {
             ],
             axisX: axisX,
             axisY: axisY,
+            legend: {
+              fontFamily: legendFontFamily,
+              fontSize: value.legendFontSize,
+              fontColor: colorWhite,
+              markerMargin: 8,
+              itemWidth: value.legendWidth,
+              itemWrap: true,
+              horizontalAlign: "right",
+              verticalAlign: "center"
+            },
             data: [
               {
                 type: value.dataType,
+                showInLegend: true,
+                legendText: value.legendText,
+                indexLabelFontColor: lineColor,
                 lineThickness: lineTickness,
                 markerType: 'none',
                 lineColor: lineColor,
@@ -166,9 +198,24 @@ $(function () {
                 verticalAlign: 'bottom'
               }
             ],
+            legend: {
+              fontSize: value.legendFontSize,
+              fontFamily: legendFontFamily,
+              fontColor: colorWhite,
+              markerMargin: 4,
+              itemWidth: value.legendWidth,
+              itemWrap: true,
+              horizontalAlign: "right",
+              verticalAlign: "center"
+            },
             data: [
               {
                 type: value.dataType,
+                showInLegend: true,
+                indexLabelLineColor: canvasBg,
+                indexLabelFontColor: canvasBg,
+                indexLabelLineThickness: 0,
+                legendText: '{indexLabel}',
                 startAngle: value.startAngle,
                 dataPoints: dataPoints
               }

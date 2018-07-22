@@ -1,11 +1,17 @@
 [
   {
-    "y": 93.6,
-    "color": "#0C785B"
+    "y": 93.4,
+    "color": "#0C785B",
+    "indexLabel": "93.4% NON-SOCIAL",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#282828"
   },
   {
-    "y": 6.4,
+    "y": 6.6,
     "color": "#00A564",
-    "exploded": true
+    "exploded": true,
+    "indexLabel": "6.6% SOCIAL",
+    "legendMarkerType": "none",
+    "legendMarkerColor": "#282828"
   }
 ]
