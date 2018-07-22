@@ -4,7 +4,7 @@
   --black: #000000;
 }
 
-.dark:root {
+.theme-dark:root {
   --theme-background: #343536;
   --theme-canvas-background: #282828;
   --theme-nav-links-color: #ffffff;
@@ -12,7 +12,7 @@
   --theme-nav-background: #424242;
 }
 
-.light:root {
+.theme-light:root {
   --theme-background: #eee;
   --theme-canvas-background: #ffffff;
   --theme-nav-links-color: #000000;
@@ -37,18 +37,36 @@ body {
 }
 
 /*  */
-.navbar-dark .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-link {
   color: var(--theme-nav-links-color);
+}
+
+.navbar .navbar-brand {
+  color: var(--theme-nav-links-color);
+}
+
+.vj-right-aside {
+  position: fixed;
+  z-index: 1031;
+  right: -290px;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  margin-top: 49px;
+  padding: 15px 15px 49px;
+  background-color: var(--theme-nav-background);
+  box-shadow: -2px 0 0 0 rgba(0, 0, 0, 0.04);
+  transition: right 350ms ease-in-out;
+}
+
+.vj-right-aside.is-opened {
+  right: 0;
 }
 
 .vj-bg-dark {
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
   background-color: var(--theme-nav-background);
   color: var(--theme-nav-acitve-background);
-}
-
-.navbar-dark .navbar-brand {
-  color: var(--theme-nav-links-color);
 }
 
 .vj-wrapper {
@@ -120,27 +138,27 @@ body {
 
 @media (min-width: 768px) {
   /*  */
-  .navbar-dark li {
+  .navbar li {
     position: relative;
     background-color: var(--theme-canvas-background);
   }
 
-  .navbar-dark .navbar-nav .nav-link {
+  .navbar .navbar-nav .nav-link {
     padding: 11px 16px;
     color: var(--theme-nav-links-color);
   }
 
-  .navbar-dark li.nav-item {
+  .navbar li.nav-item {
     margin-right: 2px;
     border-bottom: 3px solid var(--theme-green);
   }
 
-  .navbar-dark li.active,
-  .navbar-dark li:hover {
+  .navbar li.active,
+  .navbar li:hover {
     background-color: var(--theme-nav-acitve-background);
   }
 
-  .navbar-dark li.active::before {
+  .navbar li.active::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -153,8 +171,8 @@ body {
     border-bottom: 5px solid var(--theme-green);
   }
 
-  .navbar-dark .navbar-nav .active > .nav-link,
-  .navbar-dark .navbar-nav li:hover .nav-link {
+  .navbar .navbar-nav .active > .nav-link,
+  .navbar .navbar-nav li:hover .nav-link {
     color: var(--black);
   }
 
@@ -199,5 +217,9 @@ body {
     left: var(--aside-width);
     width: calc(100% - var(--aside-width));
     min-height: 100%;
+  }
+
+  .navbar .nav-item.toggle-settings-sidebar {
+    border-bottom: 0;
   }
 }
